@@ -83,3 +83,28 @@ body {
 
 	font-size: 17px;
 }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) { 
+	
+	#logo {
+		margin-left: 3px;
+	}
+	
+	.mypop {
+		width: 90%;
+		height: 84%;
+		margin-left: 2%;
+		margin-right: 2%;
+		margin-top: 15%;
+	}
+
+	#navbar {
+		padding-left: 10px;
+		padding-right: 10px;	
+	}
+	
+	#pic {
+		width: 97%;
+	}
+
+}
