@@ -1,7 +1,8 @@
 define([
   'app',
-  'esri/layers/FeatureLayer'
-], function (app, FeatureLayer) {
+  'esri/layers/FeatureLayer',
+  'esri/layers/ArcGISDynamicMapServiceLayer',
+], function (app, FeatureLayer, ArcGISDynamicMapServiceLayer) {
   app.directive('esriFeatureLayer', function(){
     // this object will tell angular how our directive behaves
     return {
@@ -20,11 +21,19 @@ define([
       controller: function($scope, $element, $attrs){
 
         // now is a good time to declare our FeautreLayer
-        var layer = new FeatureLayer($attrs.url);
+        var layers = new ArcGISDynamicMapServiceLayer($attrs.url,
+        {
+          id: "layer",
+          visible: true
+        });
+
+        // var visibleLayerIds = [20];
+        
+        // layers.setVisibleLayers(visibleLayerIds);
 
         // lets expose a function to get the layer
         this.getLayer = function(){
-          return layer;
+          return layers;
         };
       },
 

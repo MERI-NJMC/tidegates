@@ -2,26 +2,50 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
 
-    <title>Angular JS and Dojo</title>
+    <title>Tide Gate Network</title>
 
     <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css" />
-
-    <style>
-      html, body, #map {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 
   </head>
   <body ng-controller="MapCtrl">
-
-    <esri-map id="map" center="-73.97163391113281,40.70579060224226" zoom="14" basemap="topo" onclick="click">
-      <esri-feature-layer url="http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/NYC_Police_Precincts/FeatureServer/0"></esri-feature-layer>
-      <esri-feature-layer url="http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Graffiti_Locations3/FeatureServer/0"></esri-feature-layer>
+    
+    <div id="navbar">
+        <img id="logo" src="css/img/logo.png" alt="">
+        <div id="logoFont">NJMC Tide Gate Network</div>
+    </div>
+    <esri-map id="map" class='eMap' center="-74.0676,40.7820" zoom="12" basemap="satellite" onclick="click">
+          
+      <esri-feature-layer url="http://arcgis5.njmeadowlands.gov/webmaps/rest/services/Online/TidegateNetwork/MapServer/"></esri-feature-layer>
+       
+          
     </esri-map>
+    <div id="pop" class="mypop" ng-show="popVis">
+      <div style="height: 30px" id='popHeader'><div id="selTitle" style="float: left;">{{name}}</div><button type="button" id="xout" style="float: right" ng-click="popVis = !popVis"><b>X</b></button></div>
+      <div id="popcon">
+        <div id='tidegatePhoto'><img id="pic" ng-src="{{imgSrc}}" alt=""></div><br> 
+        <div id='monitoring' ng-show='date != null'>
+          <h3>Monitoring</h3>
+          <b>Time:</b>   {{date}} <br>
+          <b>Upstream:</b>   {{up}} <br>
+          <b>Downstream:</b>   {{down}} <br>
+        </div>
+        <div id='addInfo'>
+          <h3>Attributes</h3>
+          <b>Municipality:</b>   {{muni}} <br>
+          <b>Elevation:</b>   {{elevation}} <br>
+          <b>Number of Tide Gates:</b>   {{tideNum}} <br>
+          <b>Type of Gate:</b>   {{tideType}} <br>
+          <b>Maintenance:</b>   {{maintenance}} <br>
+          <b>Maintenance Required:</b>   {{mantRec}} <br>
+          <b>Comments:</b>   {{comments}} <br>
+          <b>Tide Gate?</b>   {{tidegate}} <br>
+          <b>Pump Station?</b>   {{pump}} <br>
+        </div>
+      </div>
+    </div>
 
     <!-- load Angular and the JS API -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.js"></script>

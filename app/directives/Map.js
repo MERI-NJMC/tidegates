@@ -47,6 +47,10 @@ define([
         // declare our map
         var map = new Map($attrs.id, mapOptions);
 
+        //will trigger ng-show for pop to start off hidden.
+        $scope.popVis = false;
+
+
         // start exposing an API by setting properties on "this" which is our controller
         // lets expose the "addLayer" method so child directives can add themselves to the map
         this.addLayer = function(layer){
@@ -68,12 +72,9 @@ define([
 
         // listen for click events and expost them as broadcasts on the scope and suing the scopes click handler
         map.on("click", function(e){
-          // emit a message that bubbles up scopes, listen for it on your scope
-          $scope.$emit("map.click", e);
-
           // use the scopes click fuction to handle the event
           $scope.$apply(function() {
-            $scope.click.call($scope, e);
+            $scope.click.call($scope, e, map);
           });
         });
       }

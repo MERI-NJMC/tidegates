@@ -1,0 +1,85 @@
+html, body, #map {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+	font-family: helvetica, sans-serif;
+}
+
+#logo {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-top: -1px;
+}
+
+#logoFont {
+	margin-left: 10px;
+	margin-top: 10px;
+	font-family: helvetica, sans-serif;
+	font-size: 24px;
+	color: white;
+	float: left;
+}
+
+.map {
+	height: 100%;
+	left: 0;
+	width: 100%;
+	position: fixed;
+	top: 50px;
+	overflow: hidden;
+}
+
+#mapCon {
+	overflow: hidden;
+}
+
+.mypop {
+	z-index: 100;
+	position: fixed;
+	padding: 10px;
+	width: 400px;
+	max-height: 500px;
+	background: #FFFFFF;
+	overflow-y: auto;
+	margin-left: 60%;
+	margin-right: 30%;
+	margin-top: 13%;
+	border: 1px solid #3c557d;
+}
+
+
+#navbar {
+	width: 100%; 
+	height: 50px;
+	z-index: 2;
+	background-color: #3c557d;
+	position: fixed;
+	float: left;
+	margin-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#pic {
+	width: 383px;
+	height: 300px;
+	margin-top: 10px;
+
+}
+
+#popHeader {
+	
+
+	border-bottom: 1px solid #3c557d;
+}
+
+
+
+#selTitle {
+
+	font-size: 17px;
+}
