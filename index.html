@@ -7,6 +7,7 @@
     <title>Tide Gate Network</title>
 
     <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
 
   </head>
@@ -15,6 +16,15 @@
     <div id="navbar">
         <img id="logo" src="css/img/logo.png" alt="">
         <div id="logoFont">NJMC Tide Gate Network</div>
+    </div>
+    <div id="bMapCon">
+      <select name="bMap" id="bMap" class="form-control">
+        <option value="default">Basemap Selector</option>
+        <option value="streets">Streets</option>
+        <option value="satellite">Satellite</option>
+        <option value="hybrid">Hybrid</option>
+        <option value="topo">Topographic</option>
+      </select>
     </div>
     <esri-map id="map" class='eMap' center="-74.0676,40.7820" zoom="12" basemap="satellite" onclick="click">
           
@@ -47,9 +57,11 @@
       </div>
     </div>
 
-    <!-- load Angular and the JS API -->
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.js"></script>
     <script src="http://js.arcgis.com/3.8/"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <!-- load our setup file -->
     <script src="setup.js" type="text/javascript" ></script>

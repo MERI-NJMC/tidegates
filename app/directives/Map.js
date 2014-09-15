@@ -47,6 +47,13 @@ define([
         // declare our map
         var map = new Map($attrs.id, mapOptions);
 
+        //changing the base layer of the map
+
+        $('#bMap').on('change', function() {
+          map.setBasemap(this.value);
+        });
+        
+
         //will trigger ng-show for pop to start off hidden.
         $scope.popVis = false;
 
