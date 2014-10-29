@@ -2,7 +2,7 @@
 
 	$today = getdate();
 	
-	$url = "http://dev1.gothamanalytics.net/chart.php?loc=".$_GET['id']."&from=".$today['mon']."/".($today['mday']-1)."/".$today['year']."&to=".$today['mon']."/".$today['mday']."/".$today['year'];
+	$url = "http://dash2.gothamanalytics.net/njmlc/chart.php?loc=".$_GET['id']."&from=".$today['mon']."/".($today['mday']-1)."/".$today['year']."&to=".$today['mon']."/".$today['mday']."/".$today['year'];
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
 		CURLOPT_RETURNTRANSFER => 1,
